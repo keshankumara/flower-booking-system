@@ -3,6 +3,7 @@ package com.flower_booking.flower_booking_system.config;
 import com.flower_booking.flower_booking_system.security.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
@@ -30,6 +31,11 @@ public class SecurityConfig {
 
                 // ✅ ADMIN ONLY ACCESS
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+                .requestMatchers("/uploads/**").permitAll()
+
+                .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/flowers/**").permitAll()
 
                 .anyRequest().authenticated()
             )

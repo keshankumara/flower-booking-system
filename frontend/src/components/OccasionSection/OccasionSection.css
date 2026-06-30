@@ -1,0 +1,81 @@
+/* Container Layout Header alignment */
+.occasion-filter-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+/* Header Text Styling */
+.occasion-filter-header__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #6b5a60;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+/* Horizontal Pills Track */
+.occasion-filter-header__pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+  .occasion-filter-header__pills {
+    justify-content: center;
+  }
+}
+
+/* Capsule Pill Custom Layout Buttons */
+.occasion-filter-header__pill {
+  white-space: nowrap;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  background-color: #f5f3f3;
+  color: #4d4447;
+  border: 1px solid rgba(208, 195, 199, 0.3);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.occasion-filter-header__pill:hover {
+  background-color: rgba(252, 228, 236, 0.5);
+}
+
+/* Highlighted Active State Container */
+.occasion-filter-header__pill--active {
+  background-color: #6b5a60;
+  color: #ffffff;
+  border-color: #6b5a60;
+  box-shadow: 0 4px 12px rgba(107, 90, 96, 0.15);
+}
+
+/* Categories Cards System Grid Layout */
+.categories-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .categories-grid { grid-template-cols: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .categories-grid { grid-template-cols: repeat(4, 1fr); }
+}
+
+/* Scrollbar Strippers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
